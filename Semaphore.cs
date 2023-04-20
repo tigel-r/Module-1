@@ -1,5 +1,10 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-string MyName = "Андрей";
-Console.WriteLine(MyName);
+enum Semaphore
+{
+    Red = 100
+    Yellow = 200
+    Green = 300
+}
+
 
