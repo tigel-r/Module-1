@@ -1,10 +1,11 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
 
-int[] arr = new int[] { 5, 6, 9, 1, 2, 3, 4 };
+int[] arr = new int[] { 5, -6, 9, -1, -2, 3, -4 };
 
 int Val;
 int summ = 0;
+int PosNum = 0;
 
 for (int i = 0; i < arr.Length; i++)
 {
@@ -17,12 +18,14 @@ for (int i = 0; i < arr.Length; i++)
             arr[j] = Val;
         }
     }
+    if (arr[i] >= 0)
+    { PosNum++; }
+
 
     summ += arr[i];
 
 }
-Console.WriteLine("Сумма масива: " + summ);
-
+Console.WriteLine("Количество положительных значений: " + PosNum);
 
 
 
