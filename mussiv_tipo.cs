@@ -3,8 +3,8 @@
 
 int[] arr = new int[] { 5, 6, 9, 1, 2, 3, 4 };
 
-
 int Val;
+int summ = 0;
 
 for (int i = 0; i < arr.Length; i++)
 {
@@ -17,9 +17,11 @@ for (int i = 0; i < arr.Length; i++)
             arr[j] = Val;
         }
     }
-    Console.WriteLine(arr[i]);
-}
 
+    summ += arr[i];
+
+}
+Console.WriteLine("Сумма масива: " + summ);
 
 
 
