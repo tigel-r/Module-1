@@ -1,14 +1,13 @@
-﻿using System.Reflection.Metadata;
+﻿using Microsoft.Win32.SafeHandles;
+using System.Reflection;
+using System.Reflection.Metadata;
 
 namespace ItogRab
 {
     internal class FinJob
     {
-        private static void AnketInfo()
+        private static (string, string, double, bool, string[], string[]) AnketInfo((string Name, string Surname, double Age, bool HasPet, string[] PetName, string[] Colors) User)
         {
-
-            (string Name, string Surname, double Age, bool HasPet, string[] PetName, string[] Colors) User;
-
 
             Console.Write("Введите имя: ");
             User.Name = Console.ReadLine();
@@ -56,6 +55,8 @@ namespace ItogRab
             User.Colors = NameOfColor(ColorQuan);
 
             Console.ReadKey();
+
+            return User;
 
         }
 
@@ -132,10 +133,14 @@ namespace ItogRab
 
         static void Main(string[] args)
         {
-            AnketInfo();
-            Console.WriteLine("");
+            var FinAnkUser = ("Name", "Surname", 1.1, true, new string[0],new string[0]);
             
+            FinAnkUser = AnketInfo(FinAnkUser);
+            
+            Console.WriteLine("");
+            Console.WriteLine("");
 
+            AnketСonclusion(FinAnkUser);
         }
 
 
