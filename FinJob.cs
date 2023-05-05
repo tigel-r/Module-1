@@ -1,6 +1,6 @@
 ﻿namespace ItogRab
 {
-    internal class Program
+    internal class FinJob
     {
         static void AnketInfo()
         {
@@ -8,7 +8,7 @@
             {
                 Console.Clear();
 
-                (string Name, string Surname, double Age, bool HasPet, int PetQuan, string[] PetName, int ColorQuan) User;
+                (string Name, string Surname, double Age, bool HasPet, string[] PetName, string[] Colors) User;
 
 
                 Console.Write("Введите имя: ");
@@ -20,6 +20,8 @@
                 Console.Write("Введите свой возраст: ");
                 User.Age = double.Parse(Console.ReadLine());
 
+                Console.WriteLine("");
+
                 Console.Write("Есть ли у вас питомец? (Да/Нет) : ");
                 string PetInfo = Console.ReadLine();
 
@@ -28,8 +30,8 @@
                     case "Да":
                         User.HasPet = true;
                         Console.Write("Сколько у вас питомцев: ");
-                        User.PetQuan = int.Parse(Console.ReadLine());
-                        User.PetName = NameOfPet(User.PetQuan);
+                        int PetQuan = int.Parse(Console.ReadLine());
+                        User.PetName = NameOfPet(PetQuan);
                         break;
 
                     case "Нет":
@@ -43,10 +45,13 @@
                         continue;
                 }
 
-                Console.WriteLine("Сколько у вас любимых цветов?");
-                User.ColorQuan = int.Parse(Console.ReadLine());
+                Console.WriteLine("");
 
-                NameOfColor(User.ColorQuan);
+                Console.WriteLine("Сколько у вас любимых цветов?");
+                int ColorQuan = int.Parse(Console.ReadLine());
+
+                User.Colors = NameOfColor(ColorQuan);
+
 
                 Console.ReadKey();
 
